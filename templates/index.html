@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Crop Recommendation</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#e8f5e9;
+}
+
+.box{
+width:420px;
+margin:80px auto;
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:5px 0;
+}
+
+button{
+width:100%;
+padding:12px;
+background:green;
+color:white;
+border:none;
+margin-top:10px;
+}
+
+.result{
+background:#c8e6c9;
+padding:10px;
+margin-top:15px;
+border-radius:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Crop Recommendation System</h2>
+
+<form method="POST">
+
+<input name="nitrogen" placeholder="Nitrogen" required>
+<input name="phosphorus" placeholder="Phosphorus" required>
+<input name="potassium" placeholder="Potassium" required>
+<input name="temperature" placeholder="Temperature" required>
+<input name="humidity" placeholder="Humidity" required>
+<input name="ph" placeholder="pH" required>
+<input name="rainfall" placeholder="Rainfall" required>
+
+<button type="submit">Predict</button>
+
+</form>
+
+<a href="/history">
+<button type="button">View History</button>
+</a>
+
+{% if crop %}
+
+<div class="result">
+
+<h3>Recommended Crop: {{ crop }}</h3>
+<h4>Best Place: {{ place }}</h4>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>
